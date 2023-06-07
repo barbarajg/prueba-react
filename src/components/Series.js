@@ -4,45 +4,24 @@ import styles from '../styles/Series.module.css';
 
 const Series = () => {
   const [selectedSeries, setSelectedSeries] = useState(null);
-  const filteredSeries = seriesData.entries.filter(item => item.releaseYear >= 2010);
+  const filteredSeries = seriesData.entries.filter(item => item.programType === 'series');
   const sortedSeries = filteredSeries.sort((a, b) => a.title.localeCompare(b.title));
 
-  const handleImageClick = (series) => {
+  const handleImageClick = series => {
     setSelectedSeries(series);
   };
 
-  const handleModalClose = () => {
+  const handleGoBack = () => {
     setSelectedSeries(null);
   };
 
   return (
     <div>
-      <h1>Series</h1>
-      <div className={styles.grid}>
-        {sortedSeries.map((item, index) => (
-          <div key={index} className={styles.gridItem} onClick={() => handleImageClick(item)}>
-            {item.images && item.images['Poster Art'] && item.images['Poster Art'].url ? (
-              <div
-                className={styles.seriesImage}
-                style={{
-                  backgroundImage: `url(${item.images['Poster Art'].url})`
-                }}
-              />
-            ) : (
-              <div className={styles.seriesImagePlaceholder}>
-                <span>{item.title}</span>
-              </div>
-            )}
-            <p>{item.title}</p>
-          </div>
-        ))}
-      </div>
-
-      {selectedSeries && (
-        <div className={styles.modalBackdrop}>
-          <div className={styles.modalContent}>
-            <h2>{selectedSeries.title}</h2>
-            {selectedSeries.images && selectedSeries.images['Poster Art'] && selectedSeries.images['Poster Art'].url && (
+      {selectedSeries ? (
+        <div className={styles.modalBackdrop} onClick={handleGoBack}>
+          <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
+            <h1>{selectedSeries.title}</h1>
+            {selectedSeries.images && selectedSeries.images['Poster Art'] && selectedSeries.images['Poster Art'].url ? (
               <div className={styles.modalImageWrapper}>
                 <img
                   src={selectedSeries.images['Poster Art'].url}
@@ -50,11 +29,31 @@ const Series = () => {
                   className={styles.modalImage}
                 />
               </div>
-            )}
+            ) : null}
             <p>{selectedSeries.description}</p>
             <p>Release Year: {selectedSeries.releaseYear}</p>
-            <button onClick={handleModalClose}>Close</button>
+            <button onClick={handleGoBack}>Go Back</button>
           </div>
+        </div>
+      ) : (
+        <div className={styles.grid}>
+          {sortedSeries.map((item, index) => (
+            <div key={index} className={styles.gridItem} onClick={() => handleImageClick(item)}>
+              {item.images && item.images['Poster Art'] && item.images['Poster Art'].url ? (
+                <div
+                  className={styles.seriesImage}
+                  style={{
+                    backgroundImage: `url(${item.images['Poster Art'].url})`
+                  }}
+                />
+              ) : (
+                <div className={styles.seriesImagePlaceholder}>
+                  <span>{item.title}</span>
+                </div>
+              )}
+              <p>{item.title}</p>
+            </div>
+          ))}
         </div>
       )}
     </div>

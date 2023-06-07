@@ -1,0 +1,67 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+}
+
+.gridItem {
+  text-align: center;
+}
+
+.movieImage {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+.movieImagePlaceholder {
+  width: 100%;
+  height: 220px;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 70%;
+  width: 500px;
+  text-align: center;
+}
+
+.modalImageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.modalImage {
+  width: 250px;
+  height: auto;
+}
+
+.modalContent p {
+  margin-bottom: 10px;
+}
+
+.modalContent button {
+  padding: 10px 20px;
+}
