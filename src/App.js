@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary';
 import Header from './components/Header';
 import Subheader from './components/Subheader';
 import Categories from './components/Categories';
@@ -10,20 +11,22 @@ import './styles/style.css';
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <div className="content">
-          <Header />
-          <Subheader />
-          <Categories />
-          <Routes>
-            <Route path="/series" element={<Series />} />
-            <Route path="/movies" element={<Movies />} />
-          </Routes>
+    <ErrorBoundary>
+      <Router>
+        <div className="app">
+          <div className="content">
+            <Header />
+            <Subheader />
+            <Categories />
+            <Routes>
+              <Route path="/series" element={<Series />} />
+              <Route path="/movies" element={<Movies />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </ErrorBoundary>
   );
 }
 
