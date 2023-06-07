@@ -1,0 +1,30 @@
+.categories {
+  display: flex;
+}
+
+.category {
+  width: 150px;
+  background-color: #222222;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.categoryInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.category img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.category span {
+  font-size: 14px;
+}

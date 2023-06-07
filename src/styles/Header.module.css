@@ -1,0 +1,26 @@
+.header {
+  background-color: #0077ff;
+  color: #fff;
+  padding: 10px;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftContent h1 {
+  margin: 0;
+}
+
+.subheader {
+  background-color: #414141;
+  color: #fff;
+}
+
+.subheader span {
+  padding: 5px 10px;
+  display: inline-block;
+  font-size: 14px;
+}
