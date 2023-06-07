@@ -8,20 +8,20 @@ function Categories() {
       <Link to="/series" className={styles.category}>
         <div className={styles.categoryInner}>
           <div className={styles.imageContainer}>
-            <img src="/assets/placeholder.png" alt="Series" />
+            <img src="/assets/placeholder.png" alt="Series" className={styles.image} />
           </div>
           <span className={styles.categoryText}>SERIES</span>
-          <span className={styles.categoryCaption}>Popular Series</span>
         </div>
+        <span className={styles.categoryCaption}>Popular Series</span>
       </Link>
       <Link to="/movies" className={styles.category}>
         <div className={styles.categoryInner}>
           <div className={styles.imageContainer}>
-            <img src="/assets/placeholder.png" alt="Movies" />
+            <img src="/assets/placeholder.png" alt="Movies" className={styles.image} />
           </div>
           <span className={styles.categoryText}>MOVIES</span>
-          <span className={styles.categoryCaption}>Popular Movies</span>
         </div>
+        <span className={styles.categoryCaption}>Popular Movies</span>
       </Link>
     </div>
   );

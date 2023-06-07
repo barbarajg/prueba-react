@@ -4,7 +4,9 @@ import styles from '../styles/Subheader.module.css';
 function Subheader() {
   return (
     <div className={styles.subheader}>
-      <span>Popular Titles</span>
+      <div className={styles.title}>
+        <h2>Popular Titles</h2>
+      </div>
     </div>
   );
 }

@@ -2,23 +2,19 @@
   background-color: #1e1e1e;
   color: #fff;
   padding: 20px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin-right: 40px; /* Ajusta este valor según el margen deseado */
 }
 
 .row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 
 .links {
   display: flex;
   align-items: center;
+  font-size: 14px;
 }
 
 .link {
@@ -27,29 +23,72 @@
   margin-right: 10px;
 }
 
+.link::after {
+  content: "|";
+  margin-left: 10px;
+}
+
 .copyRight {
   font-size: 12px;
+  margin-bottom: 10px;
 }
 
-.socialIcons {
+.socialIcons,
+.storeIcons {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.socialIcon {
+.socialIcon{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.storeIcon {
   width: 20px;
   height: 20px;
   margin-right: 10px;
 }
 
-.storeIcons {
-  display: flex;
-  padding-right: 50px;
+.storeIcon:last-child {
+  margin-right: 0;
 }
 
-.storeIcon {
-  width: 120px;
-  height: 40px;
-  margin-right: 10px;
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .socialIcons,
+  .storeIcons {
+    margin-top: 10px;
+  }
+
+  .socialIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .storeIcon {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
 }
 
-
+@media (min-width: 600px) {
+  .storeIcon {
+    width: 120px;
+    height: 120px;
+  }
+}

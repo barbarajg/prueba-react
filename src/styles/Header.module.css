@@ -1,26 +1,36 @@
 .header {
-  background-color: #0077ff;
+  background-color: #0075fe;
   color: #fff;
-  padding: 10px;
-}
-
-.headerContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 
-.leftContent h1 {
+.logoContainer {
+  flex-grow: 1;
+}
+
+.logo {
   margin: 0;
 }
 
-.subheader {
-  background-color: #414141;
-  color: #fff;
+.actions {
+  display: flex;
+  align-items: center;
 }
 
-.subheader span {
-  padding: 5px 10px;
-  display: inline-block;
-  font-size: 14px;
+.loginLink {
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.startButton {
+  background-color: #353535;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
 }

@@ -1,6 +1,9 @@
 .subheader {
   background-color: #414141;
   color: #fff;
-  padding: 5px 10px;
-  font-size: 14px;
+  padding: 10px 20px;
+}
+
+.title {
+  text-align: left;
 }

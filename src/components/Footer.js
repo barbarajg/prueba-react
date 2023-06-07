@@ -32,12 +32,12 @@ function Footer() {
           <img
             src="/assets/social/facebook-white.svg"
             alt="Facebook"
-            className={`${styles.socialIcon}`}
+            className={styles.socialIcon}
           />
           <img
             src="/assets/social/twitter-white.svg"
             alt="Twitter"
-            className={`${styles.socialIcon}`}
+            className={styles.socialIcon}
           />
           <img
             src="/assets/social/instagram-white.svg"
@@ -49,12 +49,12 @@ function Footer() {
           <img
             src="/assets/store/app-store.svg"
             alt="App Store"
-            className={`${styles.storeIcon}`}
+            className={styles.storeIcon}
           />
           <img
             src="/assets/store/play-store.svg"
             alt="Play Store"
-            className={`${styles.storeIcon}`}
+            className={styles.storeIcon}
           />
           <img
             src="/assets/store/windows-store.svg"
